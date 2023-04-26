@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Employee Registration</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+        body {
+			background-color: black;
+			color: white;
+		}
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		input, select {
+			margin: 5px;
+			padding: 5px;
+			width: 300px;
+			border-radius: 5px;
+			border: none;
+			box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+		}
+		label {
+			margin: 10px;
+			font-weight: bold;
+		}
+		button {
+			margin: 20px;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			background-color: #008CBA;
+			color: white;
+			font-weight: bold;
+			box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<center><h1>Employee Registration</h1></center>
+		<form action="/register" method="POST">{% csrf_token %}
+		
+		<label for="name">Name</label>
+		<input type="text" name="name" id="name" required>
+
+        <label for="email">Email</label>
+		<input type="email" name="email" id="email" required>
+
+		<label for="phone">Phone</label>
+		<input type="tel" name="phone" id="phone" required>
+
+		<label for="role">Role</label>
+		<input type="text" name="role" id="role" required>
+
+		<label for="domain">Domain</label>
+		<input type="text" name="domain" id="domain" required>
+
+		<label for="salary">Salary</label>
+        <input type="number" name="Salary" id="salary" required>
+
+		<label for="file">Upload ID proof</label>
+		<input type="file" name="file" id="file" accept=".pdf" required>
+
+		<button type="submit">Submit</button>
+	</form>
+</body>
+</html>
